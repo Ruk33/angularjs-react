@@ -1,4 +1,4 @@
-import { buildStore } from './store';
+import { buildStore } from '../store';
 
 export class ReduxStoreService {
     private store = buildStore();

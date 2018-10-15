@@ -2,7 +2,7 @@ import { IDirective, IDirectiveLinkFn } from 'angular';
 import { createElement, ComponentType } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux'
-import { ReduxStoreService } from '../../redux-store-service';
+import { ReduxStoreService } from '../../service/redux-store-service';
 
 export class ReactComponentDirective implements IDirective {
     restrict = 'A';
