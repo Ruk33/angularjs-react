@@ -16,10 +16,14 @@
             props="{ name: (name | uppercase) }"
         >
         </div>
+        <p>This component is using React, you can debug it using React Developer Tools.</p>
 
         <!-- Render connected (redux) component -->
         <div react-component="InputComponent">
         </div>
+        <p>This input is connected with redux.</p>
+        <p>With every change a new action is created and dispatched.</p>
+        <p>You can even see all the activity with Redux DevTools.</p>
 
         <script src="./bundle.js"></script>
     </body>
