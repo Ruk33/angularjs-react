@@ -1,6 +1,8 @@
 import { IDirective, IDirectiveLinkFn } from 'angular';
 import { createElement, ComponentType } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
+import { Provider } from 'react-redux'
+import { ReduxStoreService } from '../../redux-store-service';
 
 export class ReactComponentDirective implements IDirective {
     restrict = 'A';
@@ -8,7 +10,10 @@ export class ReactComponentDirective implements IDirective {
         props: '<'
     };
 
-    constructor(private components: { [componentName: string]: ComponentType }) {
+    constructor(
+        private components: { [componentName: string]: ComponentType },
+        private reduxStore: ReduxStoreService
+    ) {
 
     }
 
@@ -22,8 +27,9 @@ export class ReactComponentDirective implements IDirective {
 
         scope.$watch('props', (props) => {
             const component = createElement(componentType, props);
+            const provider = createElement(Provider, { store: this.reduxStore.getStore() }, component);
             const domElement = element[0];
-            render(component, domElement);
+            render(provider, domElement);
         }, true);
 
         element.on('$destroy', () => {

@@ -1,5 +1,7 @@
-import { GreeterComponent } from "./greeter-component/greeter-component";
+import { GreeterComponent } from "./component/greeter-component/greeter-component";
+import { InputComponentConnected } from "./component/input-component/input-component-connected";
 
 export const components = {
-    'GreeterComponent': GreeterComponent
+    'GreeterComponent': GreeterComponent,
+    'InputComponent': InputComponentConnected
 };
