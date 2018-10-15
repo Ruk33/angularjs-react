@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/usr/share/app
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./build:/usr/share/nginx/html:ro

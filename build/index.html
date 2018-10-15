@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body ng-app="app">
+        <div>
+            <span>Model from Angular:</span>
+            <input type="text" ng-model="name">
+        </div>
+
+        <!-- Render component GreeterComponent -->
+        <!-- (we can even use ng expressions) -->
+        <div 
+            react-component="GreeterComponent" 
+            props="{ name: (name | uppercase) }"
+        />
+
+        <script src="./bundle.js"></script>
+    </body>
+</html>
